@@ -22,11 +22,11 @@ All requirements are now part of the `environment.yml` file, for all environment
 
 ## Presentation Format
 
-Naturally, it would be unreasonable to expect the grader to go through the environment file, install all the right packages, set up the environment, somehow get no errors, and navigate through this large project to reproduce my result. It is possible but perhaps a bit unreasonable for the scope of this project. Instead, I will be providing screenshots and specific plots that demonstrate that this code is functional and produced the plots I will show here. Hopefully this is sufficient and saves time on both of our parts.
+It would be unreasonable to expect the grader to go through the environment file, install right packages correctly, set up the environment, and navigate through this large project to reproduce my result without significant hurdles. It is possible but perhaps unreasonable for the scope of this project. Instead, I will be providing screenshots and specific plots that demonstrate that this code is functional and produces the plots I will show here. Hopefully this is sufficient and saves time on both of our parts.
 
 ## Overview
 
-To get a big picture of what this project is all about, see `pv-finder_manual.md`. This is a fairly long document, but provides the best documentation for touring the project in a relatively understandable manner.
+To get a big picture of what this project is all about, see `pv-finder_manual.md`. This is a fairly long document but provides the best documentation for touring the project in a relatively understandable manner.
 
 ## Key Contributions
 
