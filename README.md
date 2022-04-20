@@ -1,11 +1,5 @@
 # PV Finder
 
-To download this repository:
-
-```bash
-git clone git@gitlab.cern.ch:7999/LHCb-Reco-Dev/pv-finder.git
-```
-
 ## Running
 
 This is designed to run with Conda. You should prepare your environment:
