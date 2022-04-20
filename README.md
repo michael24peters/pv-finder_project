@@ -37,10 +37,11 @@ For the scope of this project, my key contributions are found in `model/autoenco
 `model/autoencoder_models.py` houses the machine learning autoencoder models of the project. LHCb tracks are converted into the KDE, which in turn produces a histogram that these models use for learning. The data is a 4,000 bin histogram with a series of important peaks that represent primary vertices, which is what _pv_-finder is trying to find. A figure of a KDE can be seen below.
 
 PROVIDE KDE FIGURE HERE.
+![plot](figs/kde_plots.bmp)
 
 These models are tuned based on intuition, trial and error, and literature in the field. They are, in essence, designed to detect signal from background noise. An example of a model architecture, UNet -- one of the most common models trained on in the project -- is shown below.
 
-PROVIDE UNET ARCHITECTURE FIGURE HERE.
+![architecture](figs/unet-arch.bmp)
 
 For this project, UNet was modified to separately train the perturbative features -- the x and y features of the beamline, which is known to produce small perturbations that can improve the learning process when included. Normally, UNet trains the input features and perturbation as a set of 4 input features to the model. With this change, though, the two are split up and trained in parallel networks, which are then combined at the end through concatenation and brought through an output layer. This new model can be found in `autoencoder_models.py` and is called PerturbativeUNet.
 
@@ -80,17 +81,18 @@ The notebook `notebooks/script_train_lhcb-mc.py` uses full LHCb Monte Carlo data
 
 The results of this work are the bulk of the recent work done for this project. Previously, UNet was showing lukewarm results compared to simpler models. This was troubling, as it suggested that either my understanding of machine learning was crumbling or an issue was present. Great lengths were then taken to systematically test components of UNet that may be causing an underperforming model. For reference, the best performing model is shown below. It is the cyan circles on the far right. To explain these plots in great detail is unnecessary. Just keep in mind that down and to the right is the best result. This demonstrates a model with a low false positive rate (i.e. less primary vertices incorrectly indentified) and a high efficiency (i.e. primary vertices correctly identified).
 
-PAPER PLOT HERE
+![plot](figs/paper-results.png)
 
 The results I was originally obtaining are given below.
 
-OLD BAD UNET PLOT HERE
+![plot](figs/top_models.bmp)
 
 Though the curve is not fully plotted out, it is evident that the results are much less performant.
 
 The results obtained by separating the perturbative features from the X features (as it is typically called) is given below.
 
 GOOD PUNET PLOT HERE
+![plot]()
 
 Notice how this is much more in line with the previous model. In fact, the performance is _nearly_ identical. Most likely, more training and some slight parameter tuning (as well as a few other subtle techniques) will be implemented over time to (hopefully) bring the results a couple fractions of a percent higher in efficiency.
 
