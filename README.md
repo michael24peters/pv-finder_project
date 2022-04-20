@@ -36,7 +36,6 @@ For the scope of this project, my key contributions are found in `model/autoenco
 
 `model/autoencoder_models.py` houses the machine learning autoencoder models of the project. LHCb tracks are converted into the KDE, which in turn produces a histogram that these models use for learning. The data is a 4,000 bin histogram with a series of important peaks that represent primary vertices, which is what _pv_-finder is trying to find. A figure of a KDE can be seen below.
 
-PROVIDE KDE FIGURE HERE.
 ![plot](figs/kde_plots.bmp)
 
 These models are tuned based on intuition, trial and error, and literature in the field. They are, in essence, designed to detect signal from background noise. An example of a model architecture, UNet -- one of the most common models trained on in the project -- is shown below.
