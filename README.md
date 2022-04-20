@@ -99,6 +99,107 @@ Notice how this is much more in line with the previous model. In fact, the perfo
 
 With some preliminary evidence showing that the method of perturbation learning significantly impacts performance, extra steps can be taken to test this hypothesis further. For one, the pertubations (which cause relatively small changes/differences) is trained at the same time as the X features (which drive a majority of the primary vertex detection) are likely assigned equal weights and importance. This does not accurately reflect the behavior of the system. A better method of implementation would be to first train the model without perturbations, freeze these weights, then train the perturbations such that they reflect the minor necessary changes to improve performance. Finally, all weights would be unfrozen and allowed to move as needed. This should help better find local minima and produce better results. This could not be implemented in time for the final project but is coming in the near future.
 
+## Example Output
+
+An example output of running `script_train_lhcb-mc` is given below.
+
+```
+(june2020-gpu) bash-4.2$ python script_train_lhcb-mc.py &
+[5] 37553
+(june2020-gpu) bash-4.2$ Epoch 17: train=1.74027, val=1.75561, took 249.49 s
+  Validation Found 91598 of 93880, added 3445 (eff 97.57%) (0.188 FP/event)
+1.7402655478037845
+HBox(children=(FloatProgress(value=0.0, description='Training', layout=Layout(flex='2'), max=4063.0, style=ProgressStyle(description_width='initial')), HTML(value='')), layout=Layout(display='inline-flex', flex_flow='row wrap', width='100%'))
+/apps/miniconda3/envs/june2020-gpu/lib/python3.7/site-packages/awkward/__init__.py:23: DeprecationWarning: Consider switching from 'awkward' to 'awkward1', since the new interface will become the default later this year (2020).
+
+    pip install -U awkward1
+
+In Python:
+
+    >>> import awkward1 as ak
+    >>> new_style_array = ak.from_awkward0(old_style_array)
+    >>> old_style_array = ak.to_awkward0(new_style_array)
+
+  DeprecationWarning
+/apps/miniconda3/envs/june2020-gpu/lib/python3.7/site-packages/awkward/persist.py:27: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  {"minsize": 8192, "types": [numpy.bool_, numpy.bool, numpy.integer], "contexts": "*", "pair": (zlib.compress, ("zlib", "decompress"))},
+/apps/miniconda3/envs/june2020-gpu/lib/python3.7/site-packages/h5py/__init__.py:46: DeprecationWarning: `np.typeDict` is a deprecated alias for `np.sctypeDict`.
+  from ._conv import register_converters as _register_converters
+/apps/miniconda3/envs/june2020-gpu/lib/python3.7/site-packages/numba/core/types/__init__.py:108: DeprecationWarning: `np.long` is a deprecated alias for `np.compat.long`. To silence this warning, use `np.compat.long` by itself. In the likely event your code does not need to work on Python 2 you can use the builtin `int` for which `np.compat.long` is itself an alias. Doing this will not modify any behaviour and is safe. When replacing `np.long`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  long_ = _make_signed(np.long)
+/apps/miniconda3/envs/june2020-gpu/lib/python3.7/site-packages/numba/core/ir_utils.py:1525: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  if (hasattr(numpy, value)
+/apps/miniconda3/envs/june2020-gpu/lib/python3.7/site-packages/numba/core/ir_utils.py:1525: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  if (hasattr(numpy, value)
+/apps/miniconda3/envs/june2020-gpu/lib/python3.7/site-packages/numba/core/consts.py:114: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  return getattr(value, expr.attr)
+/apps/miniconda3/envs/june2020-gpu/lib/python3.7/site-packages/numba/core/ir_utils.py:2061: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  defn = getattr(defn, x, False)
+/apps/miniconda3/envs/june2020-gpu/lib/python3.7/site-packages/numba/core/typing/context.py:341: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  attrval = getattr(typ.pymod, attr)
+/apps/miniconda3/envs/june2020-gpu/lib/python3.7/site-packages/numba/core/typing/context.py:341: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  attrval = getattr(typ.pymod, attr)
+/apps/miniconda3/envs/june2020-gpu/lib/python3.7/site-packages/numba/core/typing/context.py:341: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  attrval = getattr(typ.pymod, attr)
+1 available GPUs (initially using device 0):
+  0 GeForce RTX 2080 Ti
+Loading data...
+Loaded /share/lazy/sokoloff/ML-data_AA/pv_HLT1CPU_MinBiasMagDown_14Nov.h5 in 16.88 s
+Loaded /share/lazy/sokoloff/ML-data_AA/pv_HLT1CPU_JpsiPhiMagDown_12Dec.h5 in 27.8 s
+Loaded /share/lazy/sokoloff/ML-data_AA/pv_HLT1CPU_D0piMagUp_12Dec.h5 in 28.46 s
+Loaded /share/lazy/sokoloff/ML-data_AA/pv_HLT1CPU_MinBiasMagUp_14Nov.h5 in 16.55 s
+Constructing 260000 event dataset took 1.808 s
+Loading data...
+Loaded /share/lazy/sokoloff/ML-data_AA/pv_HLT1CPU_MinBiasMagUp_14Nov.h5 in 15.7 s
+Constructing 18349 event dataset took 0.1601 s
+WARNING:root:Malformed experiment 'ML'. Detailed error Yaml file '/share/lazy/pv-finder_model_repo/ML/meta.yaml' does not exist.
+Traceback (most recent call last):
+  File "/apps/miniconda3/envs/june2020-gpu/lib/python3.7/site-packages/mlflow/store/tracking/file_store.py", line 197, in list_experiments
+    experiment = self._get_experiment(exp_id, view_type)
+  File "/apps/miniconda3/envs/june2020-gpu/lib/python3.7/site-packages/mlflow/store/tracking/file_store.py", line 260, in _get_experiment
+    meta = read_yaml(experiment_dir, FileStore.META_DATA_FILE_NAME)
+  File "/apps/miniconda3/envs/june2020-gpu/lib/python3.7/site-packages/mlflow/utils/file_utils.py", line 167, in read_yaml
+    raise MissingConfigException("Yaml file '%s' does not exist." % file_path)
+mlflow.exceptions.MissingConfigException: Yaml file '/share/lazy/pv-finder_model_repo/ML/meta.yaml' does not exist.
+WARNING:root:Malformed experiment '14'. Detailed error Yaml file '/share/lazy/pv-finder_model_repo/14/meta.yaml' does not exist.
+Traceback (most recent call last):
+  File "/apps/miniconda3/envs/june2020-gpu/lib/python3.7/site-packages/mlflow/store/tracking/file_store.py", line 197, in list_experiments
+    experiment = self._get_experiment(exp_id, view_type)
+  File "/apps/miniconda3/envs/june2020-gpu/lib/python3.7/site-packages/mlflow/store/tracking/file_store.py", line 260, in _get_experiment
+    meta = read_yaml(experiment_dir, FileStore.META_DATA_FILE_NAME)
+  File "/apps/miniconda3/envs/june2020-gpu/lib/python3.7/site-packages/mlflow/utils/file_utils.py", line 167, in read_yaml
+    raise MissingConfigException("Yaml file '%s' does not exist." % file_path)
+mlflow.exceptions.MissingConfigException: Yaml file '/share/lazy/pv-finder_model_repo/14/meta.yaml' does not exist.
+Number of batches: train = 4063, val = 287
+/data/home/michael24peters/pv-finder_fork/pv-finder/notebooks/model/training.py:94: TqdmDeprecationWarning: This function will be removed in tqdm==5.0.0
+Please use `tqdm.notebook.tqdm` instead of `tqdm.tqdm_notebook`
+  file=sys.stderr,
+HBox(children=(FloatProgress(value=0.0, description='Epochs', layout=Layout(flex='2'), max=20.0, style=ProgressStyle(description_width='initial')), HTML(value='')), layout=Layout(display='inline-flex', flex_flow='row wrap', width='100%'))
+HBox(children=(FloatProgress(value=0.0, description='Training', layout=Layout(flex='2'), max=4063.0, style=ProgressStyle(description_width='initial')), HTML(value='')), layout=Layout(display='inline-flex', flex_flow='row wrap', width='100%'))
+```
+
+The model then begins training. An example output per epoch appears as follows:
+
+```
+Epoch 3: train=2.2197, val=2.23469, took 482.79 s
+  Validation Found 91772 of 93880, added 3825 (eff 97.75%) (0.208 FP/event)
+2.2197034605729473
+HBox(children=(FloatProgress(value=0.0, description='Training', layout=Layout(flex='2'), max=4063.0, style=ProgressStyle(description_width='initial')), HTML(value='')), layout=Layout(display='inline-flex', flex_flow='row wrap', width='100%'))
+```
+
+Once stored in mlflow, it appears as follows:
+
+![plot](figs/mlflow.bmp)
+
 ## Running
 
 If one wanted to, here are the instructions for preparing the enviornment.
