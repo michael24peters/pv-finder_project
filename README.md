@@ -28,6 +28,10 @@ It would be unreasonable to expect the grader to go through the environment file
 
 To get a big picture of what this project is all about, see `pv-finder_manual.md`. This is a fairly long document but provides the best documentation for touring the project in a relatively understandable manner. The entirety of the manual is written by me.
 
+The purpose of this project is two-fold. First is to study the effects of using full LHCb Monte Carlo data (versus the previous toy Monte Carlo data. The second purpose is to study the effects of x,y perturbations and the method through which it is implemented into machine learning algorithms for pv-finder, a project for LHCb-CERN. Details of what all of this means follow below.
+
+PV-finder is a computational physics-driven project. It takes large amounts of raw data and converts it into a consumable format we can understand better, which is then learned through machine learning algorithms.
+
 ## Key Contributions
 
 For the scope of this project, my key contributions are found in `model/autoencoder_models.py`, `notebooks/utilities.py`, and `notebooks/script_train_lhcb-mc.py`. The results generated from these files (and many others) are also critical to understanding the project.
