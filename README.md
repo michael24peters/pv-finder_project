@@ -78,29 +78,27 @@ The notebook `notebooks/script_train_lhcb-mc.py` uses full LHCb Monte Carlo data
 
 ### Results
 
-The results of this work are the bulk of the recent work done for this project. Previously, UNet was showing lukewarm results compared to simpler models. This was troubling, as it suggested that either my understanding of machine learning was crumbling or an issue was present. Great lengths were then taken to systematically test components of UNet that may be causing an underperforming model. For reference, the best performing model is shown below. It is the cyan circles on the far right. To explain these plots in great detail is unnecessary. Just keep in mind that down and to the right is the best result. This demonstrates a model with a low false positive rate (i.e. less primary vertices incorrectly indentified) and a high efficiency (i.e. primary vertices correctly identified).
+The results of this work are the bulk of the recent work done for this project. Previously, UNet was showing rather lukewarm results compared to simpler models. This was troubling, as it suggested that either my understanding of machine learning was crumbling or an issue was present. Great lengths were then taken to systematically test components of UNet that may be causing an underperforming model.
 
-![plot](figs/paper-results.png)
+The results I originally obtained are given below.
 
-The results I was originally obtaining are given below.
+![plot](figs/top_models-2.bmp)
 
-![plot](figs/top_models.bmp)
+For reference, the cyan circles represent the best performing model and the target performance. The black circles are the benchmark performance for using the simpler toy Monte Carlo data. To explain these plots in great detail is unnecessary. Just keep in mind that down and to the right is the best result. This demonstrates a model with a low false positive rate (i.e. less primary vertices incorrectly indentified) and a high efficiency (i.e. primary vertices correctly identified).
 
-Though the curve is not fully plotted out, it is evident that the results are much less performant.
-
-The results obtained by separating the perturbative features from the X features (as it is typically called) is given below.
+The results obtained by separating the perturbative features from the X features (as it is typically called) are given below.
 
 ![plot](figs/march-results.bmp)
 
-Notice how this is much more in line with the previous model. In fact, the performance is _nearly_ identical. Most likely, more training and some slight parameter tuning (as well as a few other subtle techniques) will be implemented over time to (hopefully) bring the results a couple fractions of a percent higher in efficiency.
+Notice how this is much more in line with the previous model. In fact, the performance is _nearly_ identical. Most likely, more training and some slight parameter tuning (as well as a few other subtle techniques) will be implemented over time to (hopefully) attain higher efficiency.
 
 ### Future Plans
 
-With some preliminary evidence showing that the method of perturbation learning significantly impacts performance, extra steps can be taken to test this hypothesis further. For one, the pertubations (which cause relatively small changes/differences) is trained at the same time as the X features (which drive a majority of the primary vertex detection) are likely assigned equal weights and importance. This does not accurately reflect the behavior of the system. A better method of implementation would be to first train the model without perturbations, freeze these weights, then train the perturbations such that they reflect the minor necessary changes to improve performance. Finally, all weights would be unfrozen and allowed to move as needed. This should help better find local minima and produce better results. This could not be implemented in time for the final project but is coming in the near future.
+With evidence showing that the method of perturbation learning significantly impacts performance, extra steps can be taken to test this hypothesis further. For one, the pertubations (which cause relatively small changes/differences) are trained at the same time as the X features (which drive a majority of the primary vertex detection) are likely assigned equal weights and importance. This does not accurately reflect the behavior of the system. A better method of implementation would be to first train the model without perturbations, freeze these weights, then train the perturbations such that they reflect the minor necessary changes to improve performance. Finally, all weights would be unfrozen and allowed to move as needed. This should help better find local minima and produce better results. This could not be implemented in time for the final project but is coming in the near future.
 
 ## Example Output
 
-An example output of running `script_train_lhcb-mc` is given below.
+An example output of running `script_train_lhcb-mc` is given below. This hopefully serves as evidence that the code runs properly.
 
 ```
 (june2020-gpu) bash-4.2$ python script_train_lhcb-mc.py &
@@ -195,7 +193,7 @@ Epoch 3: train=2.2197, val=2.23469, took 482.79 s
 HBox(children=(FloatProgress(value=0.0, description='Training', layout=Layout(flex='2'), max=4063.0, style=ProgressStyle(description_width='initial')), HTML(value='')), layout=Layout(display='inline-flex', flex_flow='row wrap', width='100%'))
 ```
 
-Once stored in mlflow, it appears as follows:
+Once the run is complete and stored in mlflow, it appears as follows:
 
 ![plot](figs/mlflow.bmp)
 
