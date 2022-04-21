@@ -30,7 +30,7 @@ To get a big picture of what this project is all about, see `pv-finder_manual.md
 
 ## Key Contributions
 
-For the scope of this project, my key contributions are found in `model/autoencoder_models.py`, `notebooks/utilities.py`, and `script_train_lhcb-mc.py`. The results generated from these files (and many others) are also critical to understanding the project.
+For the scope of this project, my key contributions are found in `model/autoencoder_models.py`, `notebooks/utilities.py`, and `notebooks/script_train_lhcb-mc.py`. The results generated from these files (and many others) are also critical to understanding the project.
 
 ### Models
 
