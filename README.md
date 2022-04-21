@@ -26,7 +26,7 @@ It would be unreasonable to expect the grader to go through the environment file
 
 ## Overview
 
-To get a big picture of what this project is all about, see `pv-finder_manual.md`. This is a fairly long document but provides the best documentation for touring the project in a relatively understandable manner.
+To get a big picture of what this project is all about, see `pv-finder_manual.md`. This is a fairly long document but provides the best documentation for touring the project in a relatively understandable manner. The entirety of the manual is written by me.
 
 ## Key Contributions
 
