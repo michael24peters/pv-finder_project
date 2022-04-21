@@ -90,7 +90,7 @@ Though the curve is not fully plotted out, it is evident that the results are mu
 
 The results obtained by separating the perturbative features from the X features (as it is typically called) is given below.
 
-![plot](figs/march-results.png)
+![plot](figs/march-results.bmp)
 
 Notice how this is much more in line with the previous model. In fact, the performance is _nearly_ identical. Most likely, more training and some slight parameter tuning (as well as a few other subtle techniques) will be implemented over time to (hopefully) bring the results a couple fractions of a percent higher in efficiency.
 
